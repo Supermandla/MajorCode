@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Importing Google Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/majorstyle.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+
+
+
+" media="screen,projection" />
+    <link rel="icon" type="image/png" href="ico/favicon.ico" sizes="62x62">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="Artist, Producer, IT Guy Making music in Eswatini"/>
+    <title>Major Code Swazi Web Developer</title>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper indigo darken-4">
+                <img src="ico/001-responsive.png"><a href="index.html" class="brand-logo"> Major Code</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="snake.html">Snake</a></li>
+                    <li class="active"><a href="music.html">Music</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                    <!-- Switch -->
+                    <li>
+
+                        <div class="switch">
+                            <label>
+                                Dark
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                Mode
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+
+    <ul id="slide-out" class="sidenav indigo lighten-2 black-text">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/EamWdk.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="img/underdog2.jpg"></a>
+                <a href="#name"><span class="white-text name">Tsepo Malaza</span></a>
+                <a href="#email"><span class="white-text email">tseponmalaza@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="index.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="services.html"><i class="material-icons">event_note</i>Services</a></li>
+        <li><a class="waves-effect" href="contact.html"><i class="material-icons">call</i>Contact</a></li>
+
+        <li><a class="waves-effect" href="snake.html"><i class="material-icons">rv_hookup</i>Snake</a></li>
+        <li><a class="waves-effect" href="music.html"><i class="material-icons">music_note
+                </i>music</a></li>
+
+    </ul>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large indigo">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red" href="index.html"><i class="material-icons">home</i></a></li>
+            <li><a class="btn-floating yellow darken-4" href="services.html"><i class="material-icons">event_note</i></a></li>
+            <li><a class="btn-floating green" href="contact.html"><i class="material-icons">call</i></a></li>
+            <li><a class="btn-floating blue" href="music.html"><i class="material-icons">music_note</i></a></li>
+            <li><a class="btn-floating blue" href="snake.html"><i class="material-icons">rv_hookup</i></a></li>
+        </ul>
+    </div>
+
+
+    <div class="preloader-background">
+         <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+        
+       
+    </div>
+
+    <div class="container">
+     <div class="main">
+        <p id="logo"><i class="fa fa-music" aria-hidden="true"></i>
+            </p> 
+         
+         <!--left part -->
+            <div class="lefft">
+                
+                <!--Song Image -->
+                <img src="img/artforthe.jpeg" id="track-image">
+                <div class="volume">
+               
+                <p id="volume_show">90</p>
+                <i class="fa fa-volume-up" aria-hidden="true" id="volume_icon" onclick="mute_sound()"></i>
+                <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">
+            </div>
+             </div>
+         <!--Right Part -->
+         <div class="righht">
+         <div class="show_song_no">
+             <p id="present">1</p>
+             <p>/</p>
+             <p id="total">5</p>
+             </div>
+             <!-- Song Title-->
+             <p id="title">title.mp3</p>
+             <p id="artist">Artist Name</p>
+             
+             <!--middle part-->
+             <div class="middle">
+             <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                 <button onclick="just_play()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                 <button onclick="next_song()" id="pre"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+             </div>
+             
+             <!--Song Duration-->
+             <div class="duration">
+             <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+             
+             </div>
+             <button id="auto" onclick="autoplay_switch()">Auto Play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+            
+         </div>
+         
+        </div>
+        </div>
+  
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
+<script>
+    //Prelaoder
+    document.addEventListener("DOMContentLoaded", function() {
+        $('.preloader-background').delay(1700).fadeOut('slow');
+
+        $('.preloader-wrapper')
+            .delay(1700)
+            .fadeOut();
+    });
+    //Modals  
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
+    //Side Navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, options);
+    });
+
+
+
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+    });
+
+    var instance = M.Carousel.init({
+        fullWidth: true
+    });
+
+    // Or with jQuery
+
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function() {
+        $('.parallax').parallax();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left'
+        });
+    });
+    
+
+</script>
+
+</html>
